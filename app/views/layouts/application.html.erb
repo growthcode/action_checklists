@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>ActionChecklists</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Action Lists" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Action Checklists" %>">
+    <%= favicon_link_tag 'favicon.ico' %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+      <%= render 'layouts/navigation' %>
+      <%= render 'layouts/messages' %>
+      <div class="container-fluid">
+        <div id="content-main">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+    <div id="modals-container"></div>
+  </body>
 </html>

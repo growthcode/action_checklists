@@ -1,0 +1,25 @@
+<%# navigation styled for Bootstrap 3.0 %>
+<nav id="header">
+  <ul>
+
+    <% if user_signed_in? %>
+      <li class="dropdown header-btn header-btn-plans">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+          Plans
+        </a>
+        <ul class="dropdown-menu">
+          <% @plans.each do |plan| %>
+            <li>
+              <%= link_to plan.name, plan, class: "header-btn" %>
+            </li>
+          <% end %>
+        </ul>
+      </li>
+    <% else %>
+      <li><%= link_to 'Home', root_path, class: 'header-btn header-btn-plans' %></li>
+    <% end %>
+
+    <%= render 'layouts/navigation_links' %>
+
+  </ul>
+</nav>
