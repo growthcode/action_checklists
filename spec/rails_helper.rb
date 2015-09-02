@@ -1,3 +1,7 @@
+# rake db:test:prepare
+# This command generates the test environment that Rspec uses. You’ll need to redo this command if you make any new migrations.
+
+
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
