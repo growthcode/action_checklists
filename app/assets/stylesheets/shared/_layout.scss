@@ -1,0 +1,17 @@
+body {
+  background: $body-bg-clr;
+}
+
+.navbar {
+  border-radius: $header-btn-bdr-rds;
+  li.nav-user-menu {
+    max-height: 50px;
+    a {
+      padding: 5px;
+      img {
+        max-height: 40px;
+        width: auto;
+      }
+    }
+  }
+}
